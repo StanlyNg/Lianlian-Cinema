@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>LibreTV - 捐款</title>
+  <script src="libs/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="image/logo.png">
+  <link rel="apple-touch-icon" href="image/logo-black.png">
+</head>
+
+<body class="page-bg text-white flex flex-col min-h-screen">
+	<header class="border-b border-[#333] bg-[#0a0a0a] p-4">
+        <div class="container mx-auto flex items-center">
+            <div class="flex items-center">
+                <a href="/" class="flex items-center">
+                    <svg class="w-8 h-8 mr-2 text-[#00ccff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                    <h1 class="text-xl font-bold gradient-text">LibreTV</h1>
+                </a>
+            </div>
+            <div class="flex-1 text-center">
+                <h2 class="text-xl font-semibold">关于无国界医生</h2>
+            </div>
+            <div class="flex items-center">
+                <a href="/" class="px-4 py-2 bg-[#222] hover:bg-[#333] border border-[#333] rounded-lg transition-colors flex items-center">
+                    <svg class="w-5 h-5 mr-1" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    回到首页
+                </a>
+            </div>
+        </div>
+
+  <!-- 主体内容 -->
+  <main class="flex-grow container mx-auto px-4 sm:px-6 py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto bg-[#111] border border-[#333] rounded-2xl p-6 sm:p-10 shadow-lg text-center">
+      <h2 class="text-4xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent">
+        为生命助力 ❤️ 支持无国界医生（香港）
+      </h2>
+      <p class="text-gray-300 text-lg leading-relaxed mb-6">
+        无国界医生是一个独立、公正、中立的人道医疗组织，为全球遭受战争、灾难和疫情影响的人们提供紧急医疗援助。您的捐款是支持他们前线工作的宝贵力量。
+      </p>
+
+      <div class="bg-[#1a1a1a] border border-[#333] rounded-xl p-4 mb-8">
+        <p class="text-gray-300 text-base mb-2">
+          📌 捐款方式：
+        </p>
+        <ul class="text-gray-300 text-sm list-disc list-inside space-y-1">
+          <li>支持一次性或每月捐款</li>
+          <li>接受港币或美元</li>
+          <li>香港居民捐款满 HK$100 可申请税务减免</li>
+        </ul>
+        <p class="text-gray-400 text-sm mt-2">
+          （每捐出 HK$100，约有 HK$86 直接用于前线救援）<br>
+          来源：<a href="https://www.msf.hk/zh-hant/about-us/our-finance/how-your-donations-are-used" target="_blank" class="text-blue-400 hover:text-blue-300">msf.hk</a>
+        </p>
+      </div>
+
+      <!-- 捐款按钮 -->
+      <a href="https://donate.msf.org/?country=HK" target="_blank" rel="noopener"
+         class="inline-block bg-gradient-to-r from-yellow-500 to-red-500 hover:from-yellow-600 hover:to-red-600 text-white font-medium py-3 px-6 rounded-xl transition-transform transform hover:scale-105 text-lg shadow-md mb-4">
+        ❤️ 立即捐款（前往官方页面）
+      </a>
+      <p class="text-gray-500 text-xs">
+        * 捐款链接来自无国界医生香港官网 ([donate.msf.org](https://donate.msf.org/?country=HK))
+      </p>
+
+      <!-- 联系方式 -->
+      <div class="mt-8 text-gray-400 text-sm">
+        <p>📧 如需收据或咨询，请联系：</p>
+        <p>邮箱：<a href="mailto:donation@hongkong.msf.org" class="text-blue-400">donation@hongkong.msf.org</a></p>
+        <p>电话：（852）2338 8277</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer py-6 border-t border-[#333] bg-[#0a0a0a]">
+    <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+      感谢您的支持 💙 无国界医生（香港）慈善机构注册编号：91/4075 © 2025
+    </div>
+  </footer>
+
+</body>
+</html>
