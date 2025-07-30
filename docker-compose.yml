@@ -1,5 +1,5 @@
 services:
-  GorkTV
+  GorkTV:
     image: bestzwei/GorkTVlatest
     container_name: GorkTV
     ports:

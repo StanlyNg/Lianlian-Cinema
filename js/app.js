@@ -596,7 +596,7 @@ function resetSearchArea() {
     try {
         window.history.pushState(
             {},
-            `GorkTV - 免费在线视频搜索与观看平台`,
+            `GORKTV - 免费在线视频搜索与观看平台`,
             `/`
         );
         // 更新页面标题
@@ -710,7 +710,7 @@ async function search() {
             // 使用HTML5 History API更新URL，不刷新页面
             window.history.pushState(
                 { search: query },
-                `搜索: ${query} - GorkTV`,
+                `搜索: ${query} - GORKTV`,
                 `/s=${encodedQuery}`
             );
             // 更新页面标题
