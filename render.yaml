@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: libretv
+    name: GorkTV
     runtime: node
     plan: free
     buildCommand: 'npm install'
