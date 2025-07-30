@@ -26,10 +26,10 @@ GorkTV 是一个轻量级、免费的在线视频搜索与观看平台，提供�
 
 选择以下任一平台，点击一键部署按钮，即可快速创建自己的 GorkTV 实例：
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLibreSpark%2FGorkTV)  
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LibreSpark/GorkTV)  
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/LibreSpark/GorkTV)
-[![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https://github.com/LibreSpark/GorkTV)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FStanlyNg%2FGorkTV)  
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/StanlyNg/Lianlian-Cinema)  
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/StanlyNg/Lianlian-Cinema)
+[![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https://github.com/StanlyNg/Lianlian-Cinema)
 
 ## ⚠️ 安全与隐私提醒
 
@@ -213,7 +213,7 @@ GorkTV 仅作为视频搜索工具，不存储、上传或分发任何视频内�
 
 ## 🎉 贡献者福利
 
-活跃贡献者可以在 [Issue #268](https://github.com/LibreSpark/GorkTV/issues/268) 中留言，申请免费上车 1Password Team，享受团队协作工具的便利！
+活跃贡献者可以在 [Issue #268](https://github.com/StanlyNg/Lianlian-Cinema/issues/268) 中留言，申请免费上车 1Password Team，享受团队协作工具的便利！
 
 ## 💝 支持项目
 

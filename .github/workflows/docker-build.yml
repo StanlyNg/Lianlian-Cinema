@@ -11,7 +11,7 @@ jobs:
   build:
     name: Build GorkTV image
     runs-on: ubuntu-latest
-    if: (github.event.workflow_run.conclusion == 'success' && github.repository == 'LibreSpark/GorkTV') || (github.repository == 'bestZwei/GorkTV')
+    if: (github.event.workflow_run.conclusion == 'success' && github.repository == 'StanlyNg/Lianlian-Cinema') || (github.repository == 'bestZwei/GorkTV')
 
     steps:
       - name: Check out repository
@@ -26,7 +26,7 @@ jobs:
       - name: Set Docker image tag based on repository
         id: set-tag
         run: |
-          if [ "${{ github.repository }}" = "LibreSpark/GorkTV" ]; then
+          if [ "${{ github.repository }}" = "StanlyNg/Lianlian-Cinema" ]; then
             echo "IMAGE_NAME=GorkTV" >> $GITHUB_OUTPUT
             echo "TAGS=${{ secrets.DOCKER_USERNAME }}/GorkTV:latest,${{ secrets.DOCKER_USERNAME }}/GorkTV:${{ steps.version.outputs.VERSION }}" >> $GITHUB_OUTPUT
           else

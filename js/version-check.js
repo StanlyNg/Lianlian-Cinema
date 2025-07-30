@@ -37,8 +37,8 @@ async function checkForUpdates() {
         // 获取最新版本
         let latestVersion;
         const VERSION_URL = {
-            PROXY: 'https://ghfast.top/raw.githubusercontent.com/LibreSpark/GorkTV/main/VERSION.txt',
-            DIRECT: 'https://raw.githubusercontent.com/LibreSpark/GorkTV/main/VERSION.txt'
+            PROXY: 'https://ghfast.top/raw.githubusercontent.com/StanlyNg/Lianlian-Cinema/main/VERSION.txt',
+            DIRECT: 'https://raw.githubusercontent.com/StanlyNg/Lianlian-Cinema/main/VERSION.txt'
         };
         const FETCH_TIMEOUT = 1500;
         
@@ -148,7 +148,7 @@ function addVersionInfoToFooter() {
                 const updateBtn = versionElement.querySelector('span');
                 if (updateBtn) {
                     updateBtn.addEventListener('click', () => {
-                        window.open('https://github.com/LibreSpark/GorkTV', '_blank');
+                        window.open('https://github.com/StanlyNg/Lianlian-Cinema', '_blank');
                     });
                 }
             }, 100);
