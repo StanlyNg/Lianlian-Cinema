@@ -1,6 +1,6 @@
 FROM node:lts-alpine
 
-LABEL maintainer="LibreTV Team"
+LABEL maintainer="LianLian Team"
 LABEL description="LibreTV - 免费在线视频搜索与观看平台"
 
 # 设置环境变量
