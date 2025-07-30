@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>现代登录页面 | AsmrProg</title>
+    <link rel="icon" href="image/logo.png">
+    <link rel="apple-touch-icon" href="image/logo-black.png">
+    <link rel="manifest" href="manifest.json">
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container" id="container">
+    <!-- 注册区域 -->
+    <div class="form-container sign-up">
+      <form id="register-form">
+        <h1>创建账户</h1>
+        <div class="social-icons">
+          <a href="javascript:void(0);" class="icon" id="google-register"><i class="fa-brands fa-google-plus-g"></i></a>
+        </div>
+        <span>或使用您的电子邮件注册</span>
+        <input type="text" placeholder="姓名" id="register-name" />
+        <input type="email" placeholder="电子邮件" id="register-email" />
+        <input type="password" placeholder="密码" id="register-password" />
+        <button type="submit">注册</button>
+      </form>
+    </div>
+
+    <!-- 登录区域 -->
+    <div class="form-container sign-in">
+      <form id="login-form">
+        <h1>登录</h1>
+        <div class="social-icons">
+          <a href="javascript:void(0);" class="icon" id="google-login"><i class="fa-brands fa-google-plus-g"></i></a>
+        </div>
+        <span>或使用您的电子邮件密码登录</span>
+        <input type="email" placeholder="电子邮件" id="login-email" />
+        <input type="password" placeholder="密码" id="login-password" />
+        <a href="#">忘记密码？</a>
+        <button type="submit">登录</button>
+      </form>
+    </div>
+
+    <!-- 切换面板 -->
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1>欢迎回来！</h1>
+          <p>输入您的个人信息以继续使用我们的服务</p>
+          <button class="hidden" id="login">登录</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>朋友你好！</h1>
+          <p>使用您的个人信息注册即可体验我们的网站</p>
+          <button class="hidden" id="register">注册</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase 脚本 -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      signInWithPopup,
+      GoogleAuthProvider
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    // Firebase 配置
+    const firebaseConfig = {
+      apiKey: "AIzaSyCzOo7smCvpIYBx3ka6T8A4EQeRLSRi5Rs",
+      authDomain: "api-key-507c0.firebaseapp.com",
+      projectId: "api-key-507c0",
+      storageBucket: "api-key-507c0.firebasestorage.app",
+      messagingSenderId: "253436646430",
+      appId: "1:253436646430:web:3fad155ba0732ec253ca0f",
+      measurementId: "G-NWMBEL7ZT4"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    // 切换注册/登录界面
+    const container = document.getElementById("container");
+    document.getElementById("register").addEventListener("click", () => container.classList.add("active"));
+    document.getElementById("login").addEventListener("click", () => container.classList.remove("active"));
+
+    // 注册
+    document.getElementById("register-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("register-email").value;
+      const password = document.getElementById("register-password").value;
+      try {
+        await createUserWithEmailAndPassword(auth, email, password);
+        alert("注册成功，欢迎！");
+        container.classList.remove("active");
+      } catch (error) {
+        alert("注册失败：" + error.message);
+      }
+    });
+
+    // 登录
+    document.getElementById("login-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        alert("登录成功！");
+        window.location.href = "dashboard.html";
+      } catch (error) {
+        alert("登录失败：" + error.message);
+      }
+    });
+
+    // Google 注册 & 登录（两个按钮同逻辑）
+    const googleButtons = [document.getElementById("google-login"), document.getElementById("google-register")];
+    googleButtons.forEach(btn => {
+      btn.addEventListener("click", async () => {
+        try {
+          await signInWithPopup(auth, provider);
+          alert("Google 登录成功！");
+          window.location.href = "dashboard.html";
+        } catch (error) {
+          alert("Google 登录失败：" + error.message);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
