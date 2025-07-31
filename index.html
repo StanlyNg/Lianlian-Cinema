@@ -352,31 +352,50 @@
         </div>
     </div>
 
-    <!-- 版权声明弹窗 -->
-    <div id="disclaimerModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[60]">
-        <div class="bg-[#111] p-8 rounded-lg border border-[#333] w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
-            <h2 class="text-2xl font-bold gradient-text mb-6 text-center">使用声明</h2>
-            <div class="text-gray-300 space-y-4">
-                <p>
-                    欢迎使用 GorkTV。在开始使用前，请您了解并同意以下条款：
-                </p>
-                <p>
-                    <strong class="text-blue-400">服务性质：</strong> GorkTV 仅提供视频搜索服务，不直接提供、存储或上传任何视频内容。所有搜索结果均来自第三方公开接口。
-                </p>
-                <p>
-                    <strong class="text-blue-400">用户责任：</strong> 用户在使用本站服务时，须遵守相关法律法规，不得利用搜索结果从事侵权行为，如下载、传播未经授权的作品等。
-                </p>
-                <p>
-                    <strong class="text-blue-400">广告风险提示：</strong> 本站所有视频均来自第三方采集站，视频中出现的广告与本站无关，请勿相信或点击视频中的任何广告内容，谨防上当受骗。
-                </p>
-            </div>
-            <div class="mt-6 flex justify-center">
-                <button id="acceptDisclaimerBtn" class="px-6 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                    我已了解并接受
-                </button>
-            </div>
+<!-- 版权声明弹窗 -->
+<div id="disclaimerModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[60]">
+    <div class="relative bg-[#111] p-8 rounded-lg border border-[#333] w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
+        <!-- 关闭按钮 -->
+        <button id="closeDisclaimerBtn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">&times;</button>
+
+        <!-- 标题 -->
+        <h2 class="text-2xl font-bold gradient-text mb-6 text-center">使用声明</h2>
+
+        <!-- 声明内容 -->
+        <div class="text-gray-300 space-y-4 text-sm sm:text-base leading-relaxed">
+            <p>
+                <strong class="text-blue-400">内容合法性：</strong> 本站仅作为信息聚合平台，所展示内容均来自互联网公开渠道，本站无法保证其合法性、准确性或完整性，请用户自行判断。
+            </p>
+            <p>
+                <strong class="text-blue-400">版权声明：</strong> 所有视频版权归原版权方所有，如有侵权请联系我们，我们将在第一时间处理相关内容。
+            </p>
+            <p>
+                <strong class="text-blue-400">第三方链接：</strong> 本站可能包含指向第三方网站的链接，访问这些链接将由用户自行承担风险，本站不对第三方网站的内容或行为负责。
+            </p>
+            <p>
+                <strong class="text-blue-400">服务可用性：</strong> 本站不保证服务在任何时间都可用，可能因维护、网络问题或不可抗力而中断。
+            </p>
+            <p>
+                <strong class="text-blue-400">免责声明：</strong> 用户使用本服务即视为接受本声明条款，若不同意请立即停止使用本服务。
+            </p>
+            <p>
+                <strong class="text-blue-400">用户行为限制：</strong> 用户不得利用本站提供的任何服务进行非法活动，包括但不限于侵犯版权、传播恶意软件、或违反当地法律法规的行为。
+            </p>
+            <p>
+                <strong class="text-blue-400">联系邮箱：</strong> 若有任何问题或侵权投诉，请发送邮件至 
+                <a href="mailto:support@example.com" class="text-blue-400 underline">support@example.com</a>。
+            </p>
+        </div>
+
+        <!-- 接受按钮 -->
+        <div class="mt-6 flex justify-center">
+            <button id="acceptDisclaimerBtn" class="px-6 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                我已了解并接受
+            </button>
         </div>
     </div>
+</div>
+
 
     <!-- 错误提示框 -->
     <div id="toast" class="fixed top-4 left-1/2 -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 opacity-0 -translate-y-full z-50">
