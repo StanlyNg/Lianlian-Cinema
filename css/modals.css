@@ -1,214 +1,283 @@
-/* 模态框通用样式 */
+/* ==================== */
+/* 基础模态框样式 */
+/* ==================== */
 .modal-overlay {
     position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.95);
-    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 40;
-    transition: opacity 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal-content {
-    background-color: #111;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    border: 1px solid #333;
-    width: 91.666667%;
-    max-width: 56rem;
+    background: linear-gradient(145deg, #1a1a1a, #222);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    width: 90%;
+    max-width: 600px;
     max-height: 90vh;
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
 }
 
 .modal-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
-    flex: none;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .modal-title {
+    margin: 0;
     font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(to right, #00ccff, #ff3c78);
+    font-weight: 600;
+    color: transparent;
+    background: linear-gradient(90deg, #6EE7B7, #3B82F6);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    word-break: break-word;
-    padding-right: 1rem;
-    max-width: 80%;
+    background-clip: text;
+    letter-spacing: 0.5px;
 }
 
 .modal-close {
-    color: #9ca3af;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
     font-size: 1.5rem;
-    transition: color 0.2s;
-    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-close:hover {
     color: white;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
 }
 
 .modal-body {
-    overflow: auto;
-    flex: 1;
-    min-height: 0;
+    padding: 32px;
+    overflow-y: auto;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
 }
 
+/* ==================== */
 /* 密码验证模态框 */
-.password-modal {
-    z-index: 65;
-}
-
+/* ==================== */
 .password-form {
-    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .password-input {
-    width: 100%;
-    background-color: #111;
-    border: 1px solid #333;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 16px;
     color: white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .password-input:focus {
     outline: none;
-    border-color: white;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
 
 .password-submit {
-    width: 100%;
-    background-color: #3b82f6;
+    background: linear-gradient(90deg, #3B82F6, #6366F1);
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    font-weight: 500;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
 .password-submit:hover {
-    background-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.password-submit:active {
+    transform: translateY(0);
 }
 
 .password-error {
-    color: #ef4444;
-    margin-top: 0.5rem;
+    color: #EF4444;
+    font-size: 0.9rem;
+    margin-top: -10px;
     display: none;
 }
 
+/* ==================== */
 /* 声明模态框 */
-.disclaimer-modal {
-    z-index: 60;
-}
-
-.disclaimer-content {
-    color: #d1d5db;
-    line-height: 1.5;
-}
-
+/* ==================== */
 .disclaimer-content p {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 .disclaimer-content strong {
-    color: #60a5fa;
+    color: #6EE7B7;
+    font-weight: 600;
 }
 
 .disclaimer-button {
-    margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    background: linear-gradient(to right, #4f46e5, #8b5cf6, #ec4899);
+    background: linear-gradient(90deg, #8B5CF6, #EC4899);
     color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 1rem;
     font-weight: 600;
-    border-radius: 0.5rem;
-    transition: all 0.3s;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 24px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
 
 .disclaimer-button:hover {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
 }
 
-/* Toast 和 Loading 提示 */
+.disclaimer-button:active {
+    transform: translateY(0);
+}
+
+/* ==================== */
+/* 提示和加载动画 */
+/* ==================== */
 .toast {
     position: fixed;
-    top: 1rem;
+    top: 30px;
     left: 50%;
-    transform: translateX(-50%) translateY(-100%);
-    background-color: #ef4444;
+    transform: translateX(-50%) translateY(-100px);
+    background: linear-gradient(90deg, #EF4444, #F97316);
     color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.3);
-    transition: all 0.3s;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+    z-index: 1100;
     opacity: 0;
-    z-index: 50;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .toast.show {
-    transform: translateX(-50%) translateY(0);
     opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 .loading-overlay {
     position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 50;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.loading-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .loading-content {
-    background-color: #111;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    border: 1px solid #333;
+    background: rgba(30, 30, 30, 0.9);
+    padding: 32px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .loading-spinner {
-    width: 2rem;
-    height: 2rem;
-    border: 4px solid white;
-    border-top-color: transparent;
+    width: 32px;
+    height: 32px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #3B82F6;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
 
+.loading-text {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* ==================== */
+/* 动画效果 */
+/* ==================== */
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
 
-.loading-text {
-    color: white;
-    font-size: 1.125rem;
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
-/* 动画效果 */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-.modal-overlay.show {
-    animation: fadeIn 0.3s forwards;
-    display: flex;
-}
-
-.modal-overlay.hide {
-    animation: fadeOut 0.3s forwards;
+/* ==================== */
+/* 响应式设计 */
+/* ==================== */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+    }
+    
+    .modal-header {
+        padding: 16px 24px;
+    }
+    
+    .modal-body {
+        padding: 24px;
+    }
 }
