@@ -2,7 +2,7 @@
 const PASSWORD_CONFIG = {
     localStorageKey: 'libretv_password_verified',
     adminLocalStorageKey: 'libretv_admin_verified',
-    verificationTTL: 24 * 60 * 60 * 1000 // 24小时
+    verificationTTL: 20 * 60 * 60 * 1000 // 20小时
 };
 
 /**
